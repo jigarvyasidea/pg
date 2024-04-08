@@ -1,0 +1,739 @@
+<!-- HOME PAGE -->
+<% layout('layout/boilerplate.ejs') -%>
+
+<style>
+    /* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add some styling to the body */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #333;
+}
+
+/* Styling for the hero section */
+#hero {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+#hero h1 {
+    color: #007bff;
+}
+
+/* Styling for the about section */
+#about {
+    background-color: #343a40;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#about h2 {
+    color: #007bff;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about li {
+    margin-bottom: 10px;
+}
+
+/* Styling for the why-us section */
+#why-us {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+#why-us h3 {
+    color: #007bff;
+}
+
+
+
+
+  /* Reset some default styles */
+  body, h1, h2, h3, p, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add some styling to the body */
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Styling for the hero section */
+        #hero {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        /* Styling for the about section */
+        #about {
+            background-color: #343a40;
+            color: #fff;
+            padding: 50px 0;
+        }
+
+        /* Styling for the features section */
+        #features {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+        }
+
+        /* Improved Feature Section Styles */
+        #features {
+            margin-top: 4rem;
+            background: linear-gradient(to right, #4CAF50, #007BFF);
+            color: #fff;
+            padding: 2rem;
+        }
+
+        .feature-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            width: calc(33.3333% - 2rem); /* Adjust the width as needed */
+            margin: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: 2px solid #fff;
+        }
+
+        .feature-card-header {
+            border: none;
+            background-color: #007BFF;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .feature-text {
+            text-align: left;
+            color: #343a40;
+            padding: 1.5rem;
+        }
+
+        /* Card Body Styles */
+        .card-body {
+            text-align: left;
+            color: #343a40; /* Set text color to a contrasting color */
+        }
+
+
+
+
+
+/* Styling for the call section */
+#call {
+
+
+    background: url('/images/city.svg') center;
+    background-size: cover;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#call h3 {
+    color: #007bff;
+}
+
+/* Styling for the team section */
+#team {
+    background-color: #343a40;
+    color: #fff;
+    padding: 50px 0;
+}
+
+#team h3 {
+    color: #007bff;
+}
+
+/* Styling for the contact section */
+#help {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+#help h3 {
+    color: #007bff;
+}
+
+/* Add some spacing to the form */
+#help form {
+    margin-top: 20px;
+}
+
+/* Style the submit button */
+#help button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Add hover effect to submit button */
+#help button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the flash messages */
+.flash-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Adjust background color as needed */
+    color: #343a40; /* Adjust text color as needed */
+}
+
+/* Section Styles */
+#features {
+   
+    margin-top: 4rem;
+        background: linear-gradient(to right, #4CAF50, #007BFF);
+        color: #fff;
+        padding: 2rem;
+}
+
+/* Heading Styles */
+.display-3 {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+/* Border Styles */
+.border-top {
+    border-top: 1px solid #fff; /* Adjust color as needed */
+}
+
+/* Card Styles */
+.card {
+    max-width: 18rem;
+    background-color: #fff; /* Adjust card background color as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-header {
+    border: none;
+    background-color: #007BFF; /* Adjust header background color as needed */
+}
+
+/* Icon Styles */
+.fa-magnifying-glass,
+.fa-money-bill,
+.fa-phone,
+.fa-circle-check {
+    font-size: 2rem;
+    color: #007BFF; /* Adjust icon color as needed */
+}
+
+/* Text Color Styles */
+.text-primary {
+    color: #007BFF; /* Adjust text color as needed */
+}
+
+/* Card Body Styles */
+.card-body {
+    text-align: left;
+}
+
+
+/* Margin and Padding Styles */
+.m-4 {
+    margin: 1.5rem;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Card Styles */
+.card {
+    max-width: 18rem;
+    background-color: #fff; /* Adjust card background color as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.card-header {
+    border: none;
+    background-color: #007BFF; /* Adjust header background color as needed */
+}
+
+/* Icon Styles */
+.fa-magnifying-glass,
+.fa-money-bill,
+.fa-phone,
+.fa-circle-check {
+    font-size: 2rem;
+    color: #fff; /* Set icon color to white */
+}
+
+/* Text Color Styles */
+.text-primary {
+    color: #007BFF; /* Adjust text color as needed */
+}
+
+/* Card Body Styles */
+.card-body {
+    text-align: left;
+    color: #343a40; /* Set text color to a contrasting color */
+}
+
+/* Card Styles */
+.card {
+    max-width: 18rem;
+    background-color: #fff; /* Adjust card background color as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    border: 2px solid transparent; /* Add transparent border */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+    border: 2px solid #007BFF; /* Add a border color on hover */
+}
+
+.card-header {
+    border: none;
+    background-color: #007BFF; /* Adjust header background color as needed */
+}
+
+/* Icon Styles */
+.fa-magnifying-glass,
+.fa-money-bill,
+.fa-phone,
+.fa-circle-check {
+    font-size: 2rem;
+    color: #fff; /* Set icon color to white */
+}
+
+/* Text Color Styles */
+.text-primary {
+    color: #007BFF; /* Adjust text color as needed */
+}
+
+/* Card Body Styles */
+.card-body {
+    text-align: left;
+    color: #343a40; /* Set text color to a contrasting color */
+}
+
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Section Styles */
+#about {
+    background-color: #f8f9fa; /* Adjust background color as needed */
+    color: #333;
+    padding: 4rem 0;
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+}
+
+/* Title Styles */
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #007BFF; /* Adjust title color as needed */
+}
+
+/* Paragraph Styles */
+#about p {
+    line-height: 1.6;
+}
+
+/* List Styles */
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about ul li {
+    margin-bottom: 1rem;
+}
+
+/* Icon Styles */
+.fa-house {
+    margin-right: 1rem;
+    color: #007BFF; /* Adjust icon color as needed */
+}
+
+/* Hover Background Slider Effect */
+#about:hover {
+    background: linear-gradient(to right, #4CAF50, #007BFF); /* Adjust gradient colors as needed */
+    color: #fff; /* Adjust text color as needed */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Column Styles */
+.col-lg-5 {
+    padding: 0 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #about {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .col-lg-5 {
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* Section Styles */
+#help {
+    min-height: 60vh;
+    background-color: #f4f4f4; /* Adjust background color as needed */
+    padding: 4rem 0;
+    color: #333;
+}
+
+/* Title Styles */
+#help h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem;
+    color: #007BFF; /* Adjust title color as needed */
+}
+
+/* Form Styles */
+.d-flex {
+    flex-direction: column-reverse;
+}
+
+#help .col-lg-5 {
+    text-align: center;
+}
+
+#help img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+#contact-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group-prepend {
+    background-color: #007BFF;
+    border: none;
+}
+
+.input-group-text {
+    color: #fff;
+    border: none;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007BFF;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #help {
+        padding: 2rem;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    #help .col-lg-5 {
+        text-align: center;
+    }
+}
+
+
+
+
+
+</style>
+
+<section class="overflow-x-hidden">
+    <section id="hero">
+        <div class="container min-vh-100 d-flex align-items-center mt-5 mt-lg-0">
+            <div class="w-100 d-flex flex-lg-row flex-column justify-content-between align-items-center">
+                <div class="col-lg-6 mb-lg-0 mb-3" data-aos="fade-right" data-aos-duration="1000">
+                    <h1>Welcome to <br> <span class="display-3">PG Finder v2</span></h1>
+                    <h3 class="fw-light">A solution for all your PG Hunting needs.</h3>
+                    <hr>
+
+                    <a role='button' href="/property/search" class="btn btn-primary rounded-3">Search PGs</a>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="/images/about-us.png" alt="Logo" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="about" class="about min-vh-100 bg-light d-flex align-items-center fs-5">
+        <div class="d-flex justify-content-evenly w-100 flex-lg-row flex-column p-5 p-lg-0" style="font-family: 'Poppins', sans-serif; color: #333;">
+            <div class="col-lg-5">
+                <div class="section-title">
+                    <h2 class="display-3 fst-italic text-primary">About Us</h2>
+                </div>
+                <div>
+                    <p>
+                        Whether you're a student, working professional, or just looking for temporary accommodation,
+                        we're here to help you find the perfect place to stay.
+    
+                        Our user-friendly platform allows you to search for PGs and hostels in different cities and
+                        states, filter your search results based on your preferences, and book your accommodation with
+                        ease. You can view pictures, read reviews from other users, add it to your favorites, or book it
+                        right away.
+                    </p>
+                    <ul class="list-unstyled" style="color: #555;">
+                        <li><i class="fa-solid fa-house" style="margin-right: 1rem;"></i> Each PG Owner goes through a verification process.</li>
+                        <li><i class="fa-solid fa-house" style="margin-right: 1rem;"></i> Listed PG details are constantly monitored to remove bad ones.</li>
+                        <li><i class="fa-solid fa-house" style="margin-right: 1rem;"></i> Always ready customer support.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 pt-4 pt-lg-0 d-flex align-items-center">
+                <p>
+                    We understand that finding the right accommodation can be a daunting task, especially if you're
+                    new to a city or state. That's why we've made it our mission to simplify the process and provide
+                    you with a hassle-free experience. Our team is constantly working to add more PGs and hostels
+                    to our platform, ensuring that you have a wide range of options to choose from.
+    
+                    At PG Finder, we're committed to providing you with high-quality accommodation and excellent
+                    customer service. Our team is available round the clock to answer your queries, resolve any
+                    issues you may face, and ensure that your stay is comfortable and memorable.
+    
+                    So what are you waiting for? Start your search for the perfect PG or hostel today on PG Finder!
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+   
+    
+    <section id="features" class="w-100">
+        <div class="d-flex flex-column align-items-center text-center">
+            <h3 class="display-3 fst-italic mb-1" style="font-weight: 200; font-family: 'Poppins', sans-serif">Features</h3>
+            <p class="mt-1 border-top border-primary pt-3" style="font-family: 'Poppins', sans-serif;">At PG Finder, we offer a range of services to help you find the perfect PG or hostel for your stay. Whether you're a student, working professional, or just looking for temporary accommodation, we've got you covered.</p>
+        </div>
+
+        <hr class="bg-dark-subtle">
+
+        <div class="feature-cards">
+            <div class="feature-card shadow-lg border-0">
+                <div class="feature-card-header bg-transparent border-dark-subtle text-primary">
+                    <i class="fa-solid fa-magnifying-glass feature-icon"></i>
+                </div>
+                <div class="card-body feature-text">
+                    <h4>Accommodation search:</h4>
+                    <p>Our user-friendly platform allows you to search for PGs and hostels in different cities and states, filter your search results based on your preferences, and book your accommodation with ease.</p>
+                </div>
+            </div>
+            <div class="feature-card shadow-lg border-0">
+                <div class="feature-card-header bg-transparent border-dark-subtle text-primary">
+                    <i class="fa-solid fa-money-bill feature-icon"></i>
+                </div>
+                <div class="card-body feature-text">
+                    <h4>Accommodation booking:</h4>
+                    <p>We offer a hassle-free booking process, allowing users to book their accommodation with just a few clicks. Users can view pictures, read reviews from other users, and compare prices before making their booking.</p>
+                </div>
+            </div>
+            <div class="feature-card shadow-lg border-0">
+                <div class="feature-card-header bg-transparent border-dark-subtle text-primary">
+                    <i class="fa-solid fa-phone feature-icon"></i>
+                </div>
+                <div class="card-body feature-text">
+                    <h4>24/7 customer support:</h4>
+                    <p>Our team is available round the clock to answer your queries, resolve any issues you may face, and ensure that your stay is comfortable and memorable.</p>
+                </div>
+            </div>
+            <!-- Add more feature cards as needed -->
+        </div>
+    </section>
+
+
+
+    
+
+
+
+    
+
+
+    <section style="min-height: 60vh" id="help">
+        <h3 class="display-3 text-center fst-italic fw-bold" style="margin-top: 2rem">Contact Us</h3>
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center mt-5">
+            <div class="col-lg-5">
+                <img class="img-fluid" src="/images/contacts.jpeg" alt="Contact Us" style="width: 100%">
+            </div>
+            <form id='contact-form' action="/contact/" class="col-lg-5 validation-required" method="post" novalidate>
+                <div class="form-group">
+                    <label for="email" class="col-4 col-form-label">Email</label>
+                    <div class="col-12">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-address-card"></i>
+                                </div>
+                            </div>
+                            <input id="email" name="email" placeholder="Enter email" type="email" class="form-control" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="col-4 col-form-label">Subject</label>
+                    <div class="col-12">
+                        <input id="subject" name="subject" placeholder="Enter subject" type="text" minlength="3" maxlength="100" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="content" class="col-4 col-form-label">Message</label>
+                    <div class="col-12">
+                        <textarea id="content" name="content" placeholder="Enter Message" minlength="20" maxlength="1000" class="form-control" rows="6" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="d-flex justify-content-center">
+                        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</section>
+
+<script>
+    const form = document.getElementById('contact-form');
+
+	form.addEventListener('submit', e => {
+		e.preventDefault();
+
+		const formData = new URLSearchParams(new FormData(form));
+		const url = '/contact/'
+
+        const config = {
+			url: url,
+            data: formData.toString(),
+            headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            method: 'post'
+        }
+
+		axios(config)
+            .then(res => {
+	            addFlash('success', 'Message sent successfully!');
+            })
+            .catch(error => {
+	            console.log(error);
+	            if (error.response.data.errors) {
+		            const errors = error.response.data.errors;
+		            for (let err of errors)
+			            addFlash('error', err.msg);
+	            }
+
+	            else if (error.response.data.error)
+		            addFlash('error', error.response.data.error);
+            })
+    })
+</script>

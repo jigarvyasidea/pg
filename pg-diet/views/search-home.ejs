@@ -1,0 +1,216 @@
+<!-- SEARCH HOME-PAGE -->
+<% layout('layout/boilerplate.ejs') -%>
+
+<style>
+    .shadow-on-hover {
+        max-width: 200px;
+        transition: 0.25s linear;
+    }
+
+    .shadow-on-hover:hover {
+        box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.1), -0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.1), 0.5rem -0.5rem 2rem rgba(0, 0, 0, 0.1), -0.5rem -0.5rem 2rem rgba(0, 0, 0, 0.1);
+    }
+
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #495057;
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        margin-top: 3rem;
+    }
+
+    .search-container {
+        position: relative;
+        text-align: center;
+        background: url('/images/s-home-backs.png') center no-repeat;
+        background-size: cover;
+        background-blend-mode: color;
+        padding: 5rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container .overlay {
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-container h3 {
+        font-size: 1.8rem;
+        font-weight: lighter;
+        color: #fff;
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    select {
+        width: 20%;
+        padding: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    input {
+        flex-grow: 1;
+        padding: 0.5rem;
+    }
+
+    .search-button {
+        background-color: #28a745;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+        background-color: #218838;
+    }
+
+    .top-cities-container,
+    .top-properties-container {
+        text-align: center;
+        margin-top: 5rem;
+    }
+
+    .display-5 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+
+    .city-card,
+    .property-card {
+        margin-bottom: 2rem;
+        text-decoration: none;
+        color: #212529;
+        transition: transform 0.3s ease;
+    }
+
+    .city-card img,
+    .property-card img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #343a40;
+        border-radius: 50%;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .city-card:hover,
+    .property-card:hover {
+        transform: scale(1.05);
+    }
+
+    .city-card img:hover,
+    .property-card img:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-text {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    hr {
+        height: 1px;
+        background-color: #000;
+        border: none;
+        margin-top: 5rem;
+    }
+
+
+    
+</style>
+
+<section>
+    <div class="p-md-5 p-0 text-center bg-image border-0 search-container "
+     style="
+    margin-top: 3rem;
+    background: url('/images/s-home-backs.png') center no-repeat;
+    background-size: cover;
+    background-blend-mode: color;
+">
+        <div class="mask h-100 p-5" style="background: rgba(0, 0, 0, 0.5)">
+            <div class="d-flex justify-content-start overlay  h-100">
+                <div class="text-white text-start container">
+                    <p class="mb-3 h3 fw-light">Search Pg </p>
+                  
+                </div>
+            </div>
+            <form action="/property" method="get" class="input-group">
+                <div class="input-group col-12 col-sm-8 col-md-5 p-0 m-0 mx-auto">
+                    <select name="searchType" id="search-type" type="text" class="form-control col-md-2 col-4" onchange="modifyInput()">
+                        <option value="text">CITY</option>
+                        <option value="zip">ZIP Code</option>
+                    </select>
+                    <input type="text" name="searchText" id="search-text" class="form-control" minlength="2" maxlength="32" required>
+                </div>
+
+                <button type="submit" class="btn btn-success search-button"><span class="fst-italic"><span class="fst-italic">Find Pg !</span></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-10 mx-auto mt-5 container top-cities-container ">
+        <p class="display-5 text-center">Search in Top Cities</p>
+        <div class="d-flex flex-row flex-wrap column-gap-5 p-3 m-5 justify-content-center" style="flex: unset;">
+            <a href="/property?searchType=text&searchText=Jaipur" class="mb-4">
+                <img src="/images/jaipur.jpg" alt="" class="card-img object-fit-cover rounded-circle border-2 border-dark shadow-on-hover" style="aspect-ratio: 1">
+                <p class="card-text text-center mt-1">PGs in Jaipur</p>
+            </a>
+            <a href="/property?searchType=text&searchText=Ahmedabad" class="mb-4">
+                <img src="/images/ahmedabad.jpg" alt="" class="card-img object-fit-cover rounded-circle border-2 border-dark shadow-on-hover" style="aspect-ratio: 1">
+                <p class="card-text text-center mt-1">PGs in Ahmedabad</p>
+            </a>
+            <a href="/property?searchType=text&searchText=Mumbai" class="mb-4">
+                <img src="/images/mumbai.jpg" alt="" class="card-img object-fit-cover rounded-circle border-2 border-dark shadow-on-hover" style="aspect-ratio: 1">
+                <p class="card-text text-center mt-1">PGs in Mumbai</p>
+            </a>
+            <a href="/property?searchType=text&searchText=Bengaluru" class="mb-4">
+                <img src="/images/bengaluru.jpg" alt="" class="card-img object-fit-cover rounded-circle border-2 border-dark shadow-on-hover" style="aspect-ratio: 1">
+                <p class="card-text text-center mt-1">PGs in Bengaluru</p>
+            </a>
+        </div>
+
+        <hr style="all: revert; height: 1px; background-color: black">
+
+        <p class="display-5 text-center mt-5">See Top Properties</p>
+        <div class="d-flex flex-row flex-wrap column-gap-5 p-3 m-5 justify-content-center" style="flex: unset;">
+            <% for (let prop of topProperty) { %>
+            <a href="/property/<%= prop.id %>">
+                <img src="<%= prop.img %>" alt="" class="card-img object-fit-cover rounded-circle border-2 border-dark shadow-on-hover" style="aspect-ratio: 1">
+                <p class="card-text text-center mt-3"><%= prop.name %></p>
+            </a>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<script>
+    const select = document.getElementById('search-type');
+	const search = document.getElementById('search-text');
+
+    function modifyInput () {
+		if (select.value === 'text')
+			search.removeAttribute('pattern');
+		else
+			search.setAttribute('pattern', '\\d{6}');
+    }
+</script>

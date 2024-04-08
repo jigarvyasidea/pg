@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Blogs - Display all the blogs</title>
+</head>
+<body>
+    <div class="container">
+        <% for(let i of arr){ %>
+            <div class="card">
+                <h2>id : <%= i.id %></h2>
+                <h1>Titel : <%= i.titel %></h1>
+                <h5>Description : <%= i.desc %></h5>
+                <a href="/blog/<%= i.id %>">Show</a>
+                <a href="/blogs/<%= i.id %>/edit">edit</a>
+
+                <form action="/blogs/:id?_method=DELETE" method="post">
+                    <button type="submit">deleted</button>
+                </form>
+
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
